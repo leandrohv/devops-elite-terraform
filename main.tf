@@ -52,7 +52,7 @@ output "jenkins_ip" {
   value = digitalocean_droplet.jenkins.ipv4_address
 }
 
-resource "local_file" "k8s_jornada_kube_config" {
+resource "local_file" "kube_config" {
   content  = digitalocean_kubernetes_cluster.k8s.kube_config.0.raw_config
   filename = "k8s_jornada_kube_config.yaml"
 }
